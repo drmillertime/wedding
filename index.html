@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jamie & Alex — October 17, 2026</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap');
+
+  :root {
+    --cream: #faf6f0;
+    --ink: #2b2620;
+    --sage: #7c8a6e;
+    --clay: #b8825f;
+    --line: #d9d0c3;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  h1, h2, .display {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    font-size: 0.7rem;
+    color: var(--sage);
+  }
+
+  section {
+    padding: 6rem 1.5rem;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  /* Hero */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+  }
+
+  .hero .eyebrow { margin-bottom: 1.5rem; }
+
+  .hero h1 {
+    font-size: clamp(3rem, 10vw, 6rem);
+    line-height: 1;
+  }
+
+  .hero .amp {
+    display: block;
+    font-style: italic;
+    color: var(--clay);
+    font-size: 0.5em;
+    margin: 0.2em 0;
+  }
+
+  .hero .date {
+    margin-top: 2rem;
+    font-size: 1.1rem;
+    letter-spacing: 0.08em;
+  }
+
+  .hero .venue {
+    color: #6b6355;
+    font-size: 0.95rem;
+    margin-top: 0.3rem;
+  }
+
+  .divider {
+    width: 40px;
+    height: 1px;
+    background: var(--line);
+    margin: 3rem auto;
+  }
+
+  /* Sections */
+  .section-title {
+    font-size: 2.4rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .center { text-align: center; }
+
+  .story p {
+    margin-bottom: 1.2rem;
+    font-size: 1.05rem;
+    color: #4a4438;
+  }
+
+  .details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .detail-card {
+    border-top: 1px solid var(--line);
+    padding-top: 1.2rem;
+  }
+
+  .detail-card .eyebrow { margin-bottom: 0.5rem; }
+
+  .detail-card .time {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    color: var(--clay);
+  }
+
+  .detail-card .where {
+    font-size: 0.95rem;
+    margin-top: 0.3rem;
+  }
+
+  .rsvp-box {
+    text-align: center;
+    background: #fff;
+    border: 1px solid var(--line);
+    padding: 3rem 2rem;
+    border-radius: 4px;
+  }
+
+  .rsvp-box p { margin-bottom: 1.5rem; color: #4a4438; }
+
+  .btn {
+    display: inline-block;
+    background: var(--sage);
+    color: #fff;
+    text-decoration: none;
+    padding: 0.9rem 2.4rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: background 0.2s ease;
+  }
+
+  .btn:hover { background: #667059; }
+
+  footer {
+    text-align: center;
+    padding: 3rem 1.5rem 4rem;
+    font-size: 0.8rem;
+    color: #a39a89;
+    letter-spacing: 0.05em;
+  }
+
+  @media (max-width: 560px) {
+    .details-grid { grid-template-columns: 1fr; }
+    section { padding: 4rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="eyebrow">We're getting married</div>
+  <h1>Jamie<span class="amp">&amp;</span>Alex</h1>
+  <div class="date">October 17, 2026</div>
+  <div class="venue">Willow Creek Farm — Sonoma, California</div>
+</div>
+
+<section class="story">
+  <div class="center">
+    <div class="eyebrow">Our Story</div>
+    <div class="divider"></div>
+  </div>
+  <p>This is placeholder text — swap it out for your own story. Something about how you met, a favorite memory, or the moment you knew. Keep it short and warm; two or three sentences is plenty.</p>
+  <p>You can add a second paragraph here, or replace this whole section with photos if that feels more like you.</p>
+</section>
+
+<section class="details">
+  <div class="center">
+    <div class="eyebrow">The Details</div>
+    <div class="divider"></div>
+  </div>
+  <div class="details-grid">
+    <div class="detail-card">
+      <div class="eyebrow">Ceremony</div>
+      <div class="time">4:00 PM</div>
+      <div class="where">The Orchard Lawn</div>
+    </div>
+    <div class="detail-card">
+      <div class="eyebrow">Reception</div>
+      <div class="time">6:00 PM</div>
+      <div class="where">The Barn</div>
+    </div>
+    <div class="detail-card">
+      <div class="eyebrow">Attire</div>
+      <div class="time">Garden Formal</div>
+      <div class="where">Think soft colors, comfortable shoes</div>
+    </div>
+    <div class="detail-card">
+      <div class="eyebrow">Parking</div>
+      <div class="time">On-site</div>
+      <div class="where">Free lot at the main gate</div>
+    </div>
+  </div>
+</section>
+
+<section class="rsvp">
+  <div class="rsvp-box">
+    <div class="eyebrow">RSVP</div>
+    <h2 class="section-title" style="margin-top:0.5rem;">Kindly reply by Sept 1</h2>
+    <p>Replace this button with a link to your Google Form, Typeform, or Formspree form.</p>
+    <a href="#" class="btn">RSVP Now</a>
+  </div>
+</section>
+
+<footer>
+  We can't wait to celebrate with you.
+</footer>
+
+</body>
+</html>
