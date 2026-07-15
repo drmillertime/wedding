@@ -172,9 +172,16 @@ h1,h2,h3,h4,p{ margin:0; }
 
 .envelope-back{
   position:absolute; inset:0;
-  background:linear-gradient(155deg,#233b2c,#1a2d21 60%,#152520);
-  border:1px solid rgba(176,144,79,.45);
+  background:
+    radial-gradient(circle at 15% 10%, rgba(255,255,255,.05), transparent 40%),
+    linear-gradient(155deg,#3c4844,#2e3835 55%,#242e2b);
+  border:1px solid rgba(176,144,79,.35);
   box-shadow:0 30px 70px -20px rgba(0,0,0,.75), inset 0 0 0 1px rgba(241,231,212,.03);
+}
+.envelope-monogram{
+  position:absolute; top:50%; left:50%; transform:translate(-50%,-56%);
+  color:rgba(241,231,212,.16);
+  pointer-events:none;
 }
 .envelope-back::after{
   content:"";
@@ -300,21 +307,19 @@ h1,h2,h3,h4,p{ margin:0; }
 
 .seal{
   position:absolute;
-  top:44%; left:50%;
+  top:40%; left:50%;
   transform:translate(-50%,-50%);
-  width:78px; height:78px;
+  width:84px; height:84px;
   border-radius:50%;
-  background:radial-gradient(circle at 35% 30%, #8a3244, var(--wine) 70%);
-  box-shadow:0 8px 18px rgba(0,0,0,.5), inset 0 0 0 1px rgba(241,231,212,.15);
+  background:radial-gradient(circle at 32% 28%, #d3a05a, #a9743b 55%, #8a5c2c 100%);
+  box-shadow:0 8px 18px rgba(0,0,0,.5), inset 0 0 0 1px rgba(255,235,205,.25), inset 0 -3px 6px rgba(0,0,0,.25);
   display:flex; align-items:center; justify-content:center;
   z-index:5;
   transition:transform .5s cubic-bezier(.7,0,.3,1.4), opacity .5s ease;
   animation:seal-pulse 2.6s ease-in-out infinite;
 }
 .seal-inner{
-  font-family:var(--font-script);
-  font-size:22px;
-  color:var(--parchment);
+  color:rgba(60,38,16,.55);
 }
 .envelope.open .seal{
   transform:translate(-50%,-50%) scale(0);
@@ -795,7 +800,16 @@ footer .fine{ margin-top:28px; font-size:10.5px; color:rgba(246,240,227,.35); le
 <!-- ================= INTRO ENVELOPE ================= -->
 <div id="intro">
   <div class="envelope" id="envelope">
-    <div class="envelope-back"></div>
+    <div class="envelope-back">
+      <div class="envelope-monogram" aria-hidden="true">
+        <svg viewBox="0 0 140 170" width="92" height="112">
+          <ellipse cx="70" cy="85" rx="46" ry="62" fill="none" stroke="currentColor" stroke-width="1.2"/>
+          <text x="70" y="80" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-size="46" fill="currentColor">N</text>
+          <text x="70" y="112" text-anchor="middle" font-family="'Jost', sans-serif" font-size="10" letter-spacing="3" fill="currentColor">NATALIE &amp; ZAC</text>
+          <path d="M28 60c8-4 14-2 18 4M24 74c9-2 15 2 18 8M116 60c-8-4-14-2-18 4M120 74c-9-2-15 2-18 8" fill="none" stroke="currentColor" stroke-width="1"/>
+        </svg>
+      </div>
+    </div>
 
     <div class="letter" id="letter">
       <div class="letter-content">
@@ -813,7 +827,13 @@ footer .fine{ margin-top:28px; font-size:10.5px; color:rgba(246,240,227,.35); le
     <div class="envelope-flap" id="flap"></div>
 
     <button type="button" class="seal" id="sealBtn" aria-label="Open your invitation">
-      <span class="seal-inner">N&amp;Z</span>
+      <svg class="seal-inner" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+        <circle cx="12" cy="12" r="3.4"/>
+        <circle cx="8.4" cy="9.4" r="3"/>
+        <circle cx="15.6" cy="9.4" r="3"/>
+        <circle cx="8.4" cy="14.8" r="3"/>
+        <circle cx="15.6" cy="14.8" r="3"/>
+      </svg>
     </button>
   </div>
   <p class="intro-hint" id="introHint">tap the seal to open your invitation</p>
