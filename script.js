@@ -1,26 +1,34 @@
-const envelope = document.getElementById('envelope');
-const intro = document.querySelector('.intro');
+
+const hero = document.querySelector('.hero');
 const seal = document.getElementById('seal');
-const nav = document.querySelector('.site-nav');
-const menu = document.querySelector('.menu-toggle');
+const prompt = document.getElementById('openPrompt');
+const scene = document.getElementById('scene');
 
-let opened = false;
-function openInvitation() {
-  if (opened) return;
-  opened = true;
-  envelope.classList.add('open');
-  intro.classList.add('opened');
-  document.body.classList.add('opened');
-  window.setTimeout(() => {
-    document.getElementById('transitionSection').scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }, 1500);
+function openEnvelope(){
+  hero.classList.add('open');
+  sessionStorage.setItem('nz-envelope-opened','yes');
 }
+seal.addEventListener('click', openEnvelope);
+prompt.addEventListener('click', openEnvelope);
 
-seal.addEventListener('click', openInvitation);
-window.addEventListener('scroll', () => {
-  if (!opened && window.scrollY > 80) openInvitation();
-  nav.style.boxShadow = window.scrollY > window.innerHeight ? '0 8px 24px rgba(20,25,20,.08)' : 'none';
+window.addEventListener('pointermove', (e) => {
+  const x = Math.round((e.clientX / innerWidth) * 100);
+  const y = Math.round((e.clientY / innerHeight) * 100);
+  document.documentElement.style.setProperty('--mx', `${x}%`);
+  document.documentElement.style.setProperty('--my', `${y}%`);
+
+  if (innerWidth > 900) {
+    const rx = ((e.clientY / innerHeight) - .5) * -2.5;
+    const ry = ((e.clientX / innerWidth) - .5) * 3.5;
+    scene.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg)`;
+  }
 });
 
-menu.addEventListener('click', () => document.querySelector('.site-nav nav').classList.toggle('active'));
-document.querySelectorAll('.site-nav a').forEach(link => link.addEventListener('click', () => document.querySelector('.site-nav nav').classList.remove('active')));
+window.addEventListener('scroll', () => {
+  if (!hero.classList.contains('open') && window.scrollY > 40) openEnvelope();
+}, {passive:true});
+
+// Keep the experience fresh on first load, but skip the closed state during same-session revisits.
+if (sessionStorage.getItem('nz-envelope-opened') === 'yes') {
+  hero.classList.add('open');
+}

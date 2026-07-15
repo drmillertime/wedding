@@ -3,170 +3,87 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Natalie & Zachary | September 4, 2027</title>
+  <meta name="theme-color" content="#1e2a22" />
+  <meta name="description" content="Natalie Alwin and Zachary Miller — September 4, 2027 at Chalet View Lodge." />
+  <title>Natalie & Zachary — Chalet View Lodge</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&family=Italiana&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="grain"></div>
-
-  <header class="site-nav" id="siteNav">
-    <a class="brand" href="#home">N&Z</a>
-    <button class="menu-toggle" aria-label="Toggle navigation">Menu</button>
-    <nav>
-      <a href="#weekend">Weekend</a>
-      <a href="#schedule">Schedule</a>
-      <a href="#stay">Stay</a>
-      <a href="#attire">Attire</a>
-      <a href="#rsvp">RSVP</a>
-    </nav>
-  </header>
-
   <main>
-    <section class="intro" id="home" aria-label="Open the wedding invitation">
-      <div class="tabletop"></div>
-      <div class="intro-copy">
-        <p class="eyebrow">You’re invited</p>
-        <p class="hint">Click the seal or scroll to open</p>
-      </div>
+    <section class="hero" id="invitation">
+      <div class="ambient-light" aria-hidden="true"></div>
+      <img class="sprig" src="assets/pine-sprig.png" alt="" aria-hidden="true">
 
-      <div class="envelope-scene" id="envelopeScene">
-        <div class="envelope-shadow"></div>
-        <div class="envelope" id="envelope">
-          <div class="envelope-back"></div>
-          <div class="liner"></div>
+      <div class="scene" id="scene">
+        <div class="nameplate" aria-hidden="true">
+          <span>Natalie Alwin</span>
+          <b>&</b>
+          <span>Zachary Miller</span>
+        </div>
 
-          <div class="stationery-stack" id="stationeryStack">
-            <article class="paper photo-card card-back-left" aria-hidden="true">
-              <div class="forest-photo"><span>Chalet View Lodge</span></div>
-              <p class="hand-note">Meet us in the woods.</p>
-            </article>
+        <div class="envelope-wrap" id="envelopeWrap">
+          <div class="envelope-shadow" aria-hidden="true"></div>
 
-            <article class="paper weekend-card card-back-right">
-              <p class="small-title">The Long Weekend</p>
-              <p>Friday through Monday</p>
-              <p class="tiny">Early arrivals welcome Thursday</p>
+          <div class="invitation-card" id="invitationCard" aria-hidden="true">
+            <div class="paper-inner">
+              <p class="eyebrow">Together with their families</p>
+              <h1>Natalie <em>&</em> Zachary</h1>
+              <p class="invite-copy">invite you to join them for a wedding weekend in the woods</p>
               <div class="rule"></div>
-              <p class="script">Miller Time</p>
-            </article>
-
-            <article class="paper invitation-card">
-              <p class="kicker">Together with their families</p>
-              <h1>Natalie Alwin<br><span>&</span><br>Zachary Miller</h1>
-              <p class="invite-copy">invite you to join them for<br>an elegant weekend in the woods</p>
-              <div class="date-lockup">
-                <span>September</span><strong>04</strong><span>2027</span>
-              </div>
-              <p class="venue">Chalet View Lodge<br>Portola, California</p>
-              <p class="dress">Black Tie</p>
-            </article>
+              <p class="date">September 4, 2027</p>
+              <p class="venue">Chalet View Lodge · Portola, California</p>
+              <p class="attire">Black Tie</p>
+            </div>
           </div>
 
-          <div class="front-fold fold-left"></div>
-          <div class="front-fold fold-right"></div>
-          <div class="front-fold fold-bottom"></div>
-          <div class="flap" id="flap"></div>
-          <button class="wax-seal" id="seal" aria-label="Open invitation"><span>N&Z</span></button>
+          <div class="envelope">
+            <div class="back"></div>
+            <div class="flap" id="flap">
+              <div class="flap-inner"></div>
+            </div>
+            <div class="pocket">
+              <div class="pocket-left"></div>
+              <div class="pocket-right"></div>
+              <div class="pocket-bottom"></div>
+            </div>
+            <button class="seal" id="seal" aria-label="Open invitation">
+              <span class="seal-ring"></span>
+              <span class="monogram">N<span>&</span>Z</span>
+            </button>
+          </div>
+        </div>
+
+        <button class="open-prompt" id="openPrompt">
+          <span>Open invitation</span>
+          <i aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="intro-copy" id="introCopy">
+        <span class="kicker">A long weekend at Chalet View Lodge</span>
+        <h2>Elegance beneath the pines.</h2>
+        <p>Thursday arrivals, Friday welcome drinks, a black-tie wedding Saturday, river float and barbecue Sunday, and one last goodbye Monday morning.</p>
+        <a href="#weekend" class="continue-link">Enter the weekend</a>
+      </div>
+    </section>
+
+    <section class="site-preview" id="weekend">
+      <div class="preview-inner">
+        <p class="section-label">Miller Time</p>
+        <h2>A weekend away, together.</h2>
+        <div class="schedule-grid">
+          <article><span>Thursday</span><h3>Early Arrival</h3><p>Settle in, explore the property, and begin the weekend at your own pace.</p></article>
+          <article><span>Friday</span><h3>Welcome Drinks</h3><p>Rehearsal followed by cocktails and a warm welcome to the woods.</p></article>
+          <article><span>Saturday</span><h3>The Wedding</h3><p>Ceremony at 3:00 PM. Black tie. Dinner and dancing to follow.</p></article>
+          <article><span>Sunday</span><h3>River & Barbecue</h3><p>A relaxed float followed by an afternoon barbecue back at the lodge.</p></article>
+          <article><span>Monday</span><h3>Send-Off</h3><p>Breakfast, final hugs, and the road home.</p></article>
         </div>
       </div>
-
-      <div class="scroll-cue">Scroll to enter</div>
     </section>
-
-    <section class="transition-section" id="transitionSection">
-      <div class="floating-paper fp-one"></div>
-      <div class="floating-paper fp-two"></div>
-      <div class="transition-copy">
-        <p class="eyebrow">A wedding weekend at</p>
-        <h2>Chalet View Lodge</h2>
-        <p>Black-tie elegance, mountain air, and four days with our favorite people.</p>
-      </div>
-    </section>
-
-    <section class="editorial hero-site">
-      <div class="hero-image placeholder-image">
-        <div class="pine-silhouette"></div>
-        <div class="image-caption">Northern California · Late Summer</div>
-      </div>
-      <div class="hero-text">
-        <p class="eyebrow">September 4, 2027</p>
-        <h2>Come for the wedding.<br>Stay for Miller Time.</h2>
-        <p>We’re taking over Chalet View Lodge for a long weekend of welcome drinks, vows beneath the pines, a river float, an afternoon barbecue, and one last slow morning together.</p>
-      </div>
-    </section>
-
-    <section class="content-section" id="weekend">
-      <div class="section-number">01</div>
-      <div class="section-heading">
-        <p class="eyebrow">The Weekend</p>
-        <h2>Camp, but make it black tie.</h2>
-      </div>
-      <div class="section-copy columns">
-        <p>Guests are welcome to arrive Thursday and settle in early. The official celebration begins Friday and carries through Monday morning.</p>
-        <p>Everyone will stay together on property, so unpack once, wander often, and make the lodge your home for the weekend.</p>
-      </div>
-    </section>
-
-    <section class="schedule-section" id="schedule">
-      <div class="schedule-header">
-        <p class="eyebrow">The Itinerary</p>
-        <h2>Four days in the pines</h2>
-      </div>
-      <div class="schedule-grid">
-        <article><span>Thursday</span><h3>Early Arrival</h3><p>Check in, settle down, and ease into the weekend.</p></article>
-        <article><span>Friday</span><h3>Welcome Drinks</h3><p>Rehearsal followed by drinks and our first night together.</p></article>
-        <article class="feature"><span>Saturday</span><h3>The Wedding</h3><p>Ceremony at 3:00 PM. Cocktails, dinner, and dancing to follow.</p><strong>Black Tie</strong></article>
-        <article><span>Sunday</span><h3>River + BBQ</h3><p>A relaxed river float followed by an afternoon barbecue.</p></article>
-        <article><span>Monday</span><h3>Send-Off</h3><p>One last breakfast and a slow goodbye.</p></article>
-      </div>
-    </section>
-
-    <section class="split-section" id="stay">
-      <div class="split-image lodge-image"><span>Your home for the weekend</span></div>
-      <div class="split-copy">
-        <p class="eyebrow">Stay With Us</p>
-        <h2>Your cabin awaits.</h2>
-        <p>Our guests will stay together at Chalet View Lodge. Room assignments, check-in details, and weekend logistics will be shared here as plans are finalized.</p>
-        <a class="text-link" href="#rsvp">View lodging details</a>
-      </div>
-    </section>
-
-    <section class="attire-section" id="attire">
-      <div class="attire-card">
-        <p class="eyebrow">Saturday Attire</p>
-        <h2>Black tie<br>in the woods.</h2>
-        <p>Tuxedos and floor-length gowns are encouraged. Portions of the celebration may take place outdoors, so choose footwear with natural terrain in mind.</p>
-      </div>
-      <div class="packing-card">
-        <p class="eyebrow">For the rest of camp</p>
-        <ul>
-          <li>Layers for cool evenings</li>
-          <li>Swimwear for the river</li>
-          <li>Comfortable weekend shoes</li>
-          <li>Your favorite camp spirit</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="rsvp-section" id="rsvp">
-      <div class="rsvp-paper">
-        <div class="brass-pin"></div>
-        <p class="eyebrow">Kindly respond</p>
-        <h2>Reserve your place at camp.</h2>
-        <p>The RSVP experience will live here once guest details and lodging assignments are ready.</p>
-        <button type="button" class="primary-button">RSVP Coming Soon</button>
-      </div>
-    </section>
-
-    <footer>
-      <p class="script">Miller Time</p>
-      <p>Natalie & Zachary · September 4, 2027</p>
-      <p>Chalet View Lodge · Portola, California</p>
-    </footer>
   </main>
-
   <script src="script.js"></script>
 </body>
 </html>
