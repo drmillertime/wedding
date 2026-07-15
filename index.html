@@ -30,6 +30,13 @@
   --cream:          #f6f0e3;
   --cream-dim:      rgba(246,240,227,0.68);
 
+  /* classic ivory invitation card — used for the letter + save-the-date reveal */
+  --card-ivory:      #fdfcf8;
+  --card-ivory-edge: #f4efe3;
+  --card-ink:        #2c2a24;
+  --card-ink-soft:   #5c584c;
+  --card-gold:       #a9884e;
+
   --font-display: 'Cormorant Garamond', serif;
   --font-body:    'Jost', sans-serif;
   --font-script:  'Parisienne', cursive;
@@ -185,19 +192,25 @@ h1,h2,h3,h4,p{ margin:0; }
   max-height:min(78vh,520px);
   overflow-y:auto;
   transform:translate(-50%,80%) scale(.94);
-  background:linear-gradient(180deg,var(--parchment),var(--parchment-dim));
-  color:var(--ink);
-  padding:clamp(20px,4vw,40px) clamp(18px,4vw,34px);
+  background:
+    radial-gradient(ellipse at 28% 0%, rgba(255,255,255,.7), transparent 55%),
+    linear-gradient(160deg,var(--card-ivory) 0%,var(--card-ivory-edge) 100%);
+  color:var(--card-ink);
+  border:1px solid rgba(169,136,78,.4);
+  padding:clamp(26px,4vw,44px) clamp(20px,4vw,36px);
   text-align:center;
-  box-shadow:0 25px 50px -18px rgba(0,0,0,.6);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.7),
+    0 2px 5px rgba(20,16,8,.15),
+    0 45px 80px -26px rgba(0,0,0,.6);
   opacity:0;
   z-index:1;
   transition:transform .9s cubic-bezier(.2,.9,.3,1.1) .15s, opacity .7s ease .15s;
 }
 .letter::before{
   content:"";
-  position:absolute; inset:7px;
-  border:1px solid rgba(92,35,49,.35);
+  position:absolute; inset:9px;
+  border:1px solid rgba(169,136,78,.3);
   pointer-events:none;
 }
 .envelope.open .letter{
@@ -206,12 +219,19 @@ h1,h2,h3,h4,p{ margin:0; }
   z-index:3;
 }
 
+.letter-mark{
+  display:flex;
+  justify-content:center;
+  margin-bottom:14px;
+  color:var(--card-gold);
+  opacity:.85;
+}
 .letter-eyebrow{
   font-family:var(--font-body);
   font-size:10.5px;
   letter-spacing:.28em;
   text-transform:uppercase;
-  color:var(--wine);
+  color:var(--card-gold);
   font-weight:500;
 }
 .letter-names{
@@ -219,12 +239,12 @@ h1,h2,h3,h4,p{ margin:0; }
   font-weight:500;
   font-size:clamp(30px,7vw,46px);
   margin-top:10px;
-  color:var(--ink);
+  color:var(--card-ink);
 }
 .letter-names .amp{
   font-family:var(--font-script);
   font-weight:400;
-  color:var(--wine);
+  color:var(--card-gold);
   padding:0 6px;
 }
 .letter-body{
@@ -233,21 +253,21 @@ h1,h2,h3,h4,p{ margin:0; }
   font-size:clamp(14px,2.6vw,17px);
   line-height:1.6;
   margin-top:14px;
-  color:#3a3327;
+  color:var(--card-ink-soft);
 }
 .letter-date{
   margin-top:14px;
   font-size:12.5px;
   letter-spacing:.18em;
   text-transform:uppercase;
-  color:var(--wine);
+  color:var(--card-gold);
 }
 .enter-btn{
-  margin-top:20px;
+  margin-top:22px;
   display:inline-block;
   padding:12px 28px;
-  border:1px solid var(--wine);
-  color:var(--wine);
+  border:1px solid var(--card-gold);
+  color:var(--card-gold);
   font-size:11.5px;
   letter-spacing:.24em;
   text-transform:uppercase;
@@ -256,7 +276,7 @@ h1,h2,h3,h4,p{ margin:0; }
   transition:opacity .5s ease .5s, transform .5s ease .5s, background .3s, color .3s;
 }
 .envelope.open .enter-btn{ opacity:1; transform:translateY(0); pointer-events:auto; }
-.enter-btn:not([disabled]):hover{ background:var(--wine); color:var(--parchment); }
+.enter-btn:not([disabled]):hover{ background:var(--card-gold); color:var(--card-ivory); }
 
 /* the flap that folds down to "open" */
 .envelope-flap{
@@ -512,16 +532,26 @@ h1,h2,h3,h4,p{ margin:0; }
 .flip-front .fc-label{ font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--amber); }
 .flip-front .fc-cta{ margin-top:14px; font-size:11px; letter-spacing:.14em; color:var(--cream-dim); text-transform:uppercase; }
 .flip-back{
-  background:linear-gradient(160deg,var(--parchment),var(--parchment-dim));
-  color:var(--ink);
+  background:
+    radial-gradient(ellipse at 28% 0%, rgba(255,255,255,.7), transparent 55%),
+    linear-gradient(160deg,var(--card-ivory) 0%,var(--card-ivory-edge) 100%);
+  color:var(--card-ink);
+  border-color:rgba(169,136,78,.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.7), 0 30px 60px -22px rgba(0,0,0,.55);
   transform:rotateY(180deg);
 }
-.flip-back .fb-eyebrow{ font-size:11px; letter-spacing:.24em; text-transform:uppercase; color:var(--wine); }
+.flip-back::before{
+  content:"";
+  position:absolute; inset:9px;
+  border:1px solid rgba(169,136,78,.3);
+  pointer-events:none;
+}
+.flip-back .fb-eyebrow{ font-size:11px; letter-spacing:.24em; text-transform:uppercase; color:var(--card-gold); }
 .flip-back h3{
   font-family:var(--font-display); font-weight:500; font-size:clamp(28px,4vw,36px);
-  margin-top:10px; color:var(--ink);
+  margin-top:10px; color:var(--card-ink);
 }
-.flip-back .fb-place{ margin-top:10px; font-size:13px; color:#4a4030; letter-spacing:.04em; }
+.flip-back .fb-place{ margin-top:10px; font-size:13px; color:var(--card-ink-soft); letter-spacing:.04em; }
 
 .countdown{ display:flex; gap:16px; flex-wrap:wrap; }
 .cd-box{
@@ -769,6 +799,9 @@ footer .fine{ margin-top:28px; font-size:10.5px; color:rgba(246,240,227,.35); le
 
     <div class="letter" id="letter">
       <div class="letter-content">
+        <div class="letter-mark" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M12 3c2 3 2 6 0 9-2-3-2-6 0-9zM4 14c3-1 6 0 8 3-3 1-6 0-8-3zm16 0c-3-1-6 0-8 3 3 1 6 0 8-3z"/></svg>
+        </div>
         <p class="letter-eyebrow">Together with their families</p>
         <h1 class="letter-names">Natalie <span class="amp">&amp;</span> Zac</h1>
         <p class="letter-body">request the pleasure of your company as they exchange vows among the pines</p>
